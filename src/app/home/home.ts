@@ -1,37 +1,30 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { Chatbot } from './chatbot/chatbot';
 import { CommonModule } from '@angular/common';
-import { SupabaseService } from './services/supabase';
+import { SupabaseService } from '../services/supabase';
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-home',
   standalone: true,
-  imports: [RouterOutlet, Chatbot, CommonModule],
-  templateUrl: './app.html',
-  styleUrls: ['./app.css']
+  imports: [CommonModule],
+  templateUrl: './home.html'
 })
-export class App implements OnInit {
-
+export class Home implements OnInit {
   properties: any[] = [];
 
   constructor(private supabaseService: SupabaseService) {}
 
   async ngOnInit() {
-
     const { data, error } = await this.supabaseService.supabase
       .from('properties')
       .select('*');
 
     if (data) {
       this.properties = data;
-      console.log(data);
+      console.log(this.properties);
     }
 
     if (error) {
       console.error(error);
     }
-
   }
-
 }
