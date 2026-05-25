@@ -1,4 +1,17 @@
-<section class="flex flex-col items-center justify-center text-center py-32 px-6">
+
+<div class="bg-gradient-to-b from-black via-gray-900 to-black min-h-screen text-white">
+  <nav class="flex items-center justify-between px-8 py-5 backdrop-blur-lg bg-white/5 border-b border-white/10 sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-green-400">EstateAI</h1>
+
+    <ul class="hidden md:flex gap-6 text-gray-300 font-medium">
+      <li class="hover:text-green-400 cursor-pointer">Home</li>
+      <li class="hover:text-green-400 cursor-pointer">Properties</li>
+      <li class="hover:text-green-400 cursor-pointer">About</li>
+      <li class="hover:text-green-400 cursor-pointer">Contact</li>
+    </ul>
+
+    <button class="md:hidden text-3xl text-green-400">☰</button>
+  </nav><section class="flex flex-col items-center justify-center text-center py-32 px-6">
 
   <h1 class="text-6xl font-bold leading-tight max-w-4xl">
     Find Your Dream Property With
@@ -32,7 +45,9 @@
    <div
     *ngFor="let property of properties"
     class="bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:scale-105 transition duration-300"
-  >
+  ><h1 class="text-white text-5xl">
+  Test
+</h1>
 
     <img
       [src]="property.image"
